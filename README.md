@@ -14,9 +14,15 @@ If you only want main chromosomes (no alt/random/chrUn contigs), filter first:
 
 bash
 grep -E '^chr([1-9]|1[0-9]|2[0-2]|X|Y)\s' hg38.chrom.sizes > hg38.main.chrom.sizes
+
+
+
 2. Make 50kb genome-wide windows
 bash
 bedtools makewindows -g hg38.main.chrom.sizes -w 50000 > hg38_50kb_windows.bed
+
+
+
 3. Compute GC content per window
 bash
 bedtools nuc -fi hg38.fa -bed hg38_50kb_windows.bed > hg38_50kb_nuc.txt
