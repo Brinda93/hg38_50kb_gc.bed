@@ -1,4 +1,4 @@
-Synthesized bedtools methodology for generating GC content files
+
 Synthesized bedtools methodology for generating GC content files
 You can generate the hg38_50kb_gc.bed file yourself with bedtools — it's not something you download pre-made, since it depends on your exact bin size and genome build. Here's the standard workflow:
 
@@ -10,8 +10,10 @@ gunzip hg38.fa.gz
 
 # Chromosome sizes
 wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chrom.sizes
-If you only want main chromosomes (no alt/random/chrUn contigs), filter first:
 
+
+
+If you only want main chromosomes (no alt/random/chrUn contigs), filter first:
 bash
 grep -E '^chr([1-9]|1[0-9]|2[0-2]|X|Y)\s' hg38.chrom.sizes > hg38.main.chrom.sizes
 
